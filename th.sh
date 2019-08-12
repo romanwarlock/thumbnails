@@ -1,10 +1,5 @@
 #!/bin/bash
-# Script to generate thumbnails of a video and combine into one tile image.
-#
-# CAUTION:
-# FFprobe might fail to extract duration info from a MKV container. Use
-#     ffmpeg -i video.mkv -c:v copy -c:a copy video.mp4
-# to swap to an MP4 container.
+# 
 #
 # Dependencies:
 # 1. ffmpeg
