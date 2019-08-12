@@ -1,9 +1,9 @@
 #!/bin/bash
 # 
 #
-# Dependencies:
+# Dependencies/Requirements:
 # 1. ffmpeg
-# 2. ImageMagick
+# 2. ImageMagick with modified policy.xml (avaliable on this git)
 #
 # Usage:
 # ./th.sh NFRAMES TILE SIZE INPUT
@@ -17,13 +17,7 @@
 # exist).
 #
 # Example:
-# ./thumbnails.sh 16 4x4 1920 video.mp4 thumbnails.png
-#
-# Credit:
-# http://goo.gl/vzXW1b (FFmpeg wiki: generate thumbnails)
-# http://stackoverflow.com/q/7395343 (extract video length)
-# http://apple.stackexchange.com/q/52879 (combine images)
-
+# . th.sh 16 4x4 1920 video.mp4
 if [[ $# != 4 ]]; then
     echo "wrong number of arguments
 
@@ -39,7 +33,7 @@ OUTPUT is the path to the output file (make sure intermediate directories
 exist).
 
 Example:
-./th.sh 16 4x4 1920 video.mp4
+. th.sh 16 4x4 1920 video.mp4
 "
     return 1
 fi
