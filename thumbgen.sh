@@ -11,7 +11,7 @@
 # COLUMNS means number of columns;
 # ROWS means nubler of rows;
 # SIZE is the length of the longer side of the output, e.g., 1920 if you want
-# to get an 1920*1080 output image;
+# to get an 1920x1080 output image;
 # INPUT is the path to the input file;
 #
 # Example:
