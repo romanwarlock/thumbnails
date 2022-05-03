@@ -15,7 +15,15 @@
 # INPUT is the path to the input file;
 #
 # Example:
-# . th.sh 3 14 1920 video.mp4
+# . thumbgen.sh 3 14 1920 video.mp4
+# . <path-to-file>/thumbgen.sh 3 14 1920 video.mp4
+
+#if ffmpeg is not installed via snap / apt-get / etc.../ I just downloaded already compiled:
+# ffmpeg can be set as ffmpeg="/media/rk/0/soft/ffmpeg-4.4-amd64-static/ffmpeg" and further
+#the command "ffmpeg" shall be replaced with the variable "$ffmpeg"
+
+#if path to file or filename has special characters (space, etc) use "":
+# . thumbgen.sh 3 14 1920 "/wh ateve R/v (i) {deo.mp4"
 if [[ $# != 4 ]]; then
     echo "wrong number of arguments
 
