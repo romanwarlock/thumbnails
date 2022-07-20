@@ -29,7 +29,7 @@ if [[ $# != 4 ]]; then
     echo "wrong number of arguments
 
 Usage:
-. th.sh COLUMNS ROWS SIZE INPUT
+. thumbgen.sh COLUMNS ROWS SIZE INPUT
 COLUMNS means number of columns;TILE is in the form 'MxN' (where M * N should match NFRAMES), e.g., 4x4;
 ROWS means nubler of rows;
 SIZE is the length of the longer side of the output, e.g., 1920 if you want
