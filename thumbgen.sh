@@ -3,8 +3,9 @@
 #
 # Dependencies/Requirements:
 # 1. ffmpeg
+# 2. bc (basic calculator)
 # ImageMagick dependence is REMOVED
-#
+# 
 # Usage:
 # . th.sh COLUMNS ROWS SIZE INPUT
 #
