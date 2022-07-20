@@ -3,7 +3,9 @@
 #
 # Dependencies/Requirements:
 # 1. ffmpeg
-# 2. bc (basic calculator)
+# 2. awk
+# 3. sed
+# 2.72 Test version - removing bc (basic calculator)
 # ImageMagick dependence is REMOVED
 # 
 # Usage:
@@ -43,8 +45,11 @@ Example:
 "
     return 1
 fi
-NFRAMES=$(echo "scale=0;$1*$2" | bc)
-TILE=$(echo "$1x$2")
+X=$1
+Y=$2
+NFRAMES=`echo | awk '{print (X*Y)}' X="$X" Y="$Y}}"`
+#NFRAMES=$(echo "scale=0;$1*$2" | bc)
+TILE=$(echo "$Xx$Y")
 SIZE=$3
 INPUT=$4
 DURX=$(ffmpeg -i "$4" 2>&1 | grep Duration | awk '{print $2}' | tr -d ,)
@@ -55,7 +60,8 @@ TMPDIR=/tmp/thumbnails-${RANDOM}/
 mkdir $TMPDIR
 for (( VARIABLE=0; VARIABLE<NFRAMES; VARIABLE++ ))
 do
-OFFSET=$(echo "scale=2;$VARIABLE*$DURATION/$NFRAMES+$DURATION/$NFRAMES/2" | bc)
+OFFSET=`echo "input data" | awk '{print (VARIABLE*DURATION/NFRAMES+DURATION/NFRAMES/2)}' DURATION="${DURATION}}" NFRAMES="${NFRAMES}}" VARIABLE="${VARIABLE}"`
+#OFFSET=$(echo "scale=2;$VARIABLE*$DURATION/$NFRAMES+$DURATION/$NFRAMES/2" | bc)
 if [ $VARIABLE -gt 9 ];then
   ZEROS="00"
   if [ $VARIABLE -gt 99 ];then
