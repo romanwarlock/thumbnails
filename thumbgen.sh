@@ -82,7 +82,9 @@ echo "  $FILESIZE Mb" >>${TMPDIR}myfile.txt
 echo "  $DURX" >>${TMPDIR}myfile.txt
 thewidth=$(ffmpeg -i ${TMPDIR}output.jpg 2>&1 |grep Video|awk '{ split( $8, pieces,  /[x,]/ ) ; print pieces[1] }')
 theheight=$(ffmpeg -i ${TMPDIR}output.jpg 2>&1 |grep Video|awk '{ split( $8, pieces,  /[x,]/ ) ; print pieces[2] }')
-theheight=$(echo "scale=0;$theheight*$SIZE/$thewidth" | bc)
+theheight=`echo | awk '{printf  "%.0f ", theheight*SIZE/thewidth}' theheight="${theheight}}" SIZE="${SIZE}}" thewidth="${thewidth}"`
+#theheight=$(echo "scale=0;$theheight*$SIZE/$thewidth" | bc)
 ffmpeg -i ${TMPDIR}output.jpg -vf scale=${SIZE}x${theheight} -vframes 1 ${TMPDIR}th.jpg
-theheight=$(echo "$theheight+150" | bc)
+theheight=`echo | awk '{printf  "%.0f ", 150+theheight}' theheight="${theheight}}"`
+#theheight=$(echo "$theheight+150" | bc)
 ffmpeg -f lavfi -i color=white:${SIZE}x${theheight} -i ${TMPDIR}th.jpg -filter_complex "[0:v][1:v] overlay=0:150,drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf:fontsize=20:fontcolor=black:x=30:y=20:textfile=${TMPDIR}myfile.txt" -vframes 1 th${RANDOM}.jpg
