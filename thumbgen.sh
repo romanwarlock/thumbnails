@@ -31,7 +31,6 @@
 
 ffmpeg="/media/rk/0/soft/ffmpeg/ffmpeg"
 
-
 if [[ $# != 4 ]]; then
     echo "wrong number of arguments
 
