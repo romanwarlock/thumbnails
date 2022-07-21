@@ -5,11 +5,12 @@
 # 1. ffmpeg 
 # 2. awk
 # 3. sed
+# 4. linux commands
 # bc dependence has been REMOVED - awk is used for calculations
 # ImageMagick dependence has been REMOVED - ffmpeg is used to work with jpg-files
 # 
 # Usage:
-# . th.sh COLUMNS ROWS SIZE INPUT
+# . thumbgen.sh COLUMNS ROWS SIZE INPUT
 #
 # COLUMNS means number of columns;
 # ROWS means nubler of rows;
@@ -23,7 +24,7 @@
 #
 #if $ffmpeg  is not installed via snap / apt-get / etc.../ I just downloaded already compiled:
 # $ffmpeg  can be set as $ffmpeg ="/media/rk/0/soft/$ffmpeg -4.4-amd64-static/$ffmpeg " and further
-#the command "$ffmpeg " shall be replaced with the variable "$$ffmpeg "
+#the command "$ffmpeg " shall be replaced with the variable "$ffmpeg "
 #
 #if path to file or filename has special characters (space, etc) use "":
 # . thumbgen.sh 3 14 1920 "/wh ateve R/v (i) {deo.mp4"
