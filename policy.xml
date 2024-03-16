@@ -10,7 +10,6 @@
 ]>
 <!--
   Configure ImageMagick policies.
-
   Domains include system, delegate, coder, filter, path, or resource.
 
   Rights include none, read, write, and execute.  Use | to combine them,
