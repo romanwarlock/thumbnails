@@ -1,5 +1,6 @@
 #!/bin/bash
 # 
+#
 # Dependencies/Requirements:
 # 1. ffmpeg 
 # 2. awk
