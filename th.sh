@@ -1,5 +1,5 @@
 #!/bin/bash
-# 
+# Obsolete version with ImageMagick and bc
 #
 # Dependencies/Requirements:
 # 1. ffmpeg
