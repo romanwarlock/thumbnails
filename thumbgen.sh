@@ -64,7 +64,6 @@ TMPDIR=/mnt/c/Users/roman/Downloads/
 X=$1
 Y=$2
 NFRAMES=`echo | awk '{print (X*Y)}' X="$X" Y="$Y}}"`
-#NFRAMES=$(echo "scale=0;$1*$2" | bc)
 TILE=$(echo "${X}x${Y}")
 SIZE=$3
 INPUT=$4
